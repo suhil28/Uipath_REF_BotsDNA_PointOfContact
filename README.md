@@ -1,3 +1,11 @@
+### Select Point of Contact for the Project based on the Availability of Phone Numbers ###
+
+
+
+*BOT has to identify the Contact type based on the availability of the contact number of the manager or developer for the project with the project code then select the proper contact type from the drop-down list like both manager or developer* 
+
+***This Project Base on REFrameWork***
+
 ### Documentation is included in the Documentation folder ###
 
 
@@ -6,7 +14,7 @@
 
 * Built on top of *Transactional Business Process* template
 * Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
+* Offers high-level logging, exception handling, and recovery
 * Keeps external settings in *Config.xlsx* file and Orchestrator assets
 * Pulls credentials from Orchestrator assets and *Windows Credential Manager*
 * Gets transaction data from Orchestrator queue and updates back status
@@ -16,7 +24,7 @@
 ### How It Works ###
 
 1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
+ + ./Framework/*InitiAllSettings* - Load configuration data from the Config.xlsx file and from assets
  + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
  + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
 
@@ -24,7 +32,7 @@
  + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
 
 3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
+ + *Process* - Process transaction and invoke other workflows related to the process being automated 
  + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
 
 4. **END PROCESS**
